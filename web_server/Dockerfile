@@ -1,7 +1,7 @@
 FROM caas-registry:5000/library/ubuntu
 
 
-MAINTAINER franco.fiorese@hpe.com
+MAINTAINER franco.fiorese@gmail.com
 
 # avoid debconf errors
 ENV DEBIAN_FRONTEND=noninteractive

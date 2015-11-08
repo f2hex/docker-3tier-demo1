@@ -1,5 +1,5 @@
 FROM redmine
-MAINTAINER franco.fiorese@hpe.com
+MAINTAINER franco.fiorese@gmail.com
 
 ENV POSTGRES_PORT_5432_TCP=5432
 ENV POSTGRES_ENV_POSTGRES_USER=redmine
