@@ -18,7 +18,7 @@ elif [ "$1" = "restore" ]; then
   #
   # perform a restore of the application volume data
   #
-  if [ ! -d /data ]; then
+  if [ ! -d $VOLUME_MOUNT_POINT ]; then
     sudo mkdir -p $VOLUME_MOUNT_POINT
   fi
   pushd .
