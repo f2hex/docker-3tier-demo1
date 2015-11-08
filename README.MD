@@ -1,8 +1,8 @@
 ## Redmine with Docker
 This is a sample 3 tier application to be used to demonstrate some of the benefits of Docker with a deployment confiened to single host (Docker node):
-* re-use of existing artifacts: in this case is about to use an existing image, on Docker Hub, customize it and run in a composite 3 tier application service
-* ability to move a workload seamlessly across multiple infrastructure - at this time this is done as cold migration: stop the application, clone it to another Docker host, migrate the data and restart it in the new host
-* use of custom private network (based on the latest SDN capability of Docker - version 1.9) - this allow for self-contained multi-host configuration, within the application service
+* **re-use of existing artifacts**: in this case is about to use an existing image, on Docker Hub, customize it and run in a composite 3 tier application service
+* **ability to move a workload seamlessly across multiple infrastructure**: at this time this is done as cold migration: stop the application, migrate the data and restart it in the new host (the application images are available on the Docker registry so ther is no need to transfer them)
+* *use of custom private networks**: (based on the latest SDN capability of Docker - version 1.9), this allow for self-contained multi-host configuration, within the application service
 
 ### Scripts
 The `start_container` script it is used to test the startup of each Container by hand. It has two parameters, the first it is useful in order to specify the run mode: interactive or detached. The latter is the name of the Container tier module: web, app or db.
