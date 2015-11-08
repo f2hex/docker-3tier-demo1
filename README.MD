@@ -1,7 +1,7 @@
 ## Redmine with Docker
 This is a sample 3 tier application to be used to demonstrate some of the benefits of Docker with a deployment confiened to single host (Docker node):
 * **re-use of existing artifacts**: in this case is about to use an existing image, on Docker Hub, customize it and run in a composite 3 tier application service
-* **ability to move a workload seamlessly across multiple infrastructure**: at this time this is done as cold migration: stop the application, migrate the data and restart it in the new host (the application images are available on the Docker registry so ther is no need to transfer them)
+* **ability to move a workload seamlessly across multiple infrastructure**: at this time this is done as cold migration: stop the application, migrate the data and restart it in the new host (the application images are available on the Docker registry so ther is no need to transfer them) - the Containers in this case are fully stateless.
 * **use of custom private networks**: (based on the latest SDN capability of Docker - version 1.9), this allow for self-contained multi-host configuration, within the application service
 
 ### Scripts
