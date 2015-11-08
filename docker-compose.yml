@@ -1,0 +1,24 @@
+
+db_server:
+  image: f2hex/postgres
+  container_name: redmine-db_server
+  volumes:
+    - /data/redmine/db:/var/lib/postgresql/data
+  net: redmine
+
+app_server:
+  image: f2hex/redmine
+  container_name: redmine-app_server
+  volumes:
+    - /data/redmine/app/files:/usr/src/redmine/files
+  net: redmine
+
+web_server:
+  image: f2hex/nginx
+  container_name: redmine-web_server
+  ports:
+    - "443:443"
+  volumes:
+    - /data/redmine/web/log:/var/log/nginx
+  net: redmine
+

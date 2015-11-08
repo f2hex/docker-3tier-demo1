@@ -1,0 +1,7 @@
+FROM postgres
+MAINTAINER franco.fiorese@hpe.com
+
+ENV POSTGRES_PORT_5432_TCP=5432
+ENV POSTGRES_USER=redmine
+ENV POSTGRES_PASSWORD=secret
+ENV POSTGRES_DB=redmine

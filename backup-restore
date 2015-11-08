@@ -1,0 +1,34 @@
+#!/bin/bash
+VOLUMES_ARCHIVE=redmine-volume-data.tar.gz
+VOLUME_MOUNT_POINT=/data
+APP_NAME=redmine
+
+if [ "$1" = "backup" ];then
+  if [ -d $VOLUME_MOUNT_POINT/$APP_NAME ]; then
+    ARCH_LOC=`pwd`
+    pushd .
+    cd $VOLUME_MOUNT_POINT
+    sudo tar -cvz -f $ARCH_LOC/$VOLUMES_ARCHIVE $APP_NAME
+    popd
+    echo "backup operation completed - the archive file is located here: $ARCH_LOC/$VOLUMES_ARCHIVE"
+  else
+    echo "mount point $VOLUME_MOUNT_POINT/$APP_NAME does not exist" 
+  fi
+elif [ "$1" = "restore" ]; then
+  #
+  # perform a restore of the application volume data
+  #
+  if [ ! -d /data ]; then
+    sudo mkdir -p $VOLUME_MOUNT_POINT
+  fi
+  pushd .
+  ARCH_LOC=`pwd`
+  cd $VOLUME_MOUNT_POINT
+  sudo tar -xvz -f $ARCH_LOC/$VOLUMES_ARCHIVE
+  popd
+  echo "restore operation completed"
+else
+  echo "invalid command, it must be either 'backup' or 'restore'"
+fi
+
+

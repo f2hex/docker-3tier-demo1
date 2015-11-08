@@ -1,0 +1,1 @@
+docker build -t f2hex/postgres .
