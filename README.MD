@@ -53,11 +53,11 @@ Play with the Redmine appication logging into it (user: admin, password: admin),
 It is almost straightforward and these are the steps:
 1) First ensure you are on the same directoy where you started the service (i.e. where the `docker-compose.yml` file is located), then stop the application service using `docker-compose`
 ```
-  docker compose stop
+  docker compose --x-networking stop
 ```
 2) Now you should see no more the application Containers running so you can completely remove the used resources still using `docker-compose`:
 ```
-  docker compose rm
+  docker compose --x-networking rm
 ```
 3) You can now, still in the same directory where you run the `docker-compose rm` commandm run the volume backup script - you will need to authenticate for sudo execution:
 ```
