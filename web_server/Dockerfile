@@ -1,7 +1,8 @@
 FROM caas-registry:5000/library/ubuntu
 
-
 MAINTAINER franco.fiorese@gmail.com
+
+LABEL io.docker-3tier-demo.image-specs="{\"Description\":\"Containerized PostgreSQL\",\"Version\":\"0.1\",\"app-service\":\"redmine.asc\", \"build command\":\"docker build -t f2hex/nginx .\"}"
 
 # avoid debconf errors
 ENV DEBIAN_FRONTEND=noninteractive

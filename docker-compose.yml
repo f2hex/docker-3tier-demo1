@@ -1,5 +1,6 @@
 
 db_server:
+  restart: always
   image: f2hex/postgres
   container_name: redmine-db_server
   volumes:
@@ -7,6 +8,7 @@ db_server:
   net: redmine
 
 app_server:
+  restart: always
   image: f2hex/redmine
   container_name: redmine-app_server
   volumes:
@@ -14,6 +16,7 @@ app_server:
   net: redmine
 
 web_server:
+  restart: always
   image: f2hex/nginx
   container_name: redmine-web_server
   ports:
